@@ -22,21 +22,4 @@ function testNoteListView() {
   assert.isTrue(noteListView.returnHTML() === "<ul><li><div>First note</div></li><li><div>Second note</div></li></ul>");
 };
 
-testNoteListView();
-
-
-function testNoteController() {
-  function NoteListDouble (){
-  };
-  NoteListDouble.prototype ={
-    createHTHML: function () {}
-  };
-
-  var noteListDouble = new NoteListDouble();
-  var noteList = new NoteList();
-  var noteController = new NoteController(noteList);
-  noteController.createInnerHTML('app');
-  assert.isTrue(document.getElementById('app').innerHTML === "<ul><li><div>Favourite drink: seltzer</div></li></ul>")
-};
-
-testNoteController();
+  testNoteListView();
