@@ -39,3 +39,19 @@ function testNoteController() {
 };
 
   testNoteController();
+
+  function testSingleNoteView(){
+    function NoteDouble(text) {};
+    NoteDouble.prototype = {
+      returnNoteText: function() {}
+    }
+
+    var notedouble = new NoteDouble("Favorite drink: seltzer")
+    var singleNoteView = new SingleNoteView(notedouble);
+    singleNoteView.note.returnNoteText = function (){
+      return "Favorite drink: seltzer";
+    }
+    assert.isTrue(singleNoteView.returnNoteHTML() === "<div>Favorite drink: seltzer</div>");
+  };
+
+  testSingleNoteView();
