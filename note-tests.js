@@ -26,12 +26,17 @@ testNoteListView();
 
 
 function testNoteController() {
+  function NoteListDouble (){
+  };
+  NoteListDouble.prototype ={
+    createHTHML: function () {}
+  };
+
+  var noteListDouble = new NoteListDouble();
   var noteList = new NoteList();
-  var noteListView = new NoteListView(noteList);
-  noteList.addNote("Favourite food: pesto");
   var noteController = new NoteController(noteList);
-  noteController.returnInnerHTML();
-  assert.isTrue(document.getElementById('app').innerHTML === "<ul><li><div>Favourite food: pesto</div></li></ul>")
+  noteController.createInnerHTML('app');
+  assert.isTrue(document.getElementById('app').innerHTML === "<ul><li><div>Favourite drink: seltzer</div></li></ul>")
 };
 
 testNoteController();
