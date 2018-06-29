@@ -8,8 +8,9 @@ testNoteText();
 
 function testNoteList() {
   var noteList = new NoteList();
-  noteList.addNote("My favourite language is JavaScript");
+  noteList.addNote("My favourite language is JavaScript",1);
   assert.isTrue(noteList.noteArray[0].returnNoteText() === "My favourite language is JavaScript");
+  assert.isTrue(noteList.noteArray[0].returnNoteId() === 0); 
 };
 
 testNoteList();

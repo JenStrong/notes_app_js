@@ -1,6 +1,7 @@
 (function(exports) {
-  function Note(text) {
+  function Note(text,noteid) {
     this.text = text;
+    this.noteid = noteid
   };
 
   exports.Note = Note;
@@ -8,4 +9,8 @@
 
 Note.prototype.returnNoteText = function () {
   return this.text;
+};
+
+Note.prototype.returnNoteId = function () {
+  return this.noteid; 
 };

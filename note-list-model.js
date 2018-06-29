@@ -12,6 +12,8 @@ NoteList.prototype.returnNoteArray = function () {
 };
 
 NoteList.prototype.addNote = function (text) {
-  var note = new Note(text);
+  var noteid = this.noteArray.length;
+
+  var note = new Note(text,noteid);
   this.noteArray.push(note);
 };
