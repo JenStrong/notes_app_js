@@ -8,5 +8,5 @@
 
 SingleNoteView.prototype.returnNoteHTML = function () {
   var noteText = this.note.returnNoteText();
-  return "<div>" + noteText + "</div>"
+  return "<div>" + noteText + "</div>"; 
 };

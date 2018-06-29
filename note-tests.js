@@ -16,10 +16,10 @@ testNoteList();
 
 function testNoteListView() {
   var noteList = new NoteList();
-  noteList.addNote("First note");
+  noteList.addNote("First note: My favourite food is pesto");
   noteList.addNote("Second note");
   var noteListView = new NoteListView(noteList);
-  assert.isTrue(noteListView.returnHTML() === "<ul><li><div>First note</div></li><li><div>Second note</div></li></ul>");
+  assert.isTrue(noteListView.returnHTML().includes('<ul><li><div>First note: My favou</div></li><li><div>Second note</div></li></ul>'));
 };
 
   testNoteListView();
